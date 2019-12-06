@@ -65,23 +65,27 @@ int main()
     AnimauxDeDenis *joueur1;
     AnimauxDeFlorent *joueur2;
 
-    cout << "Joueur 1 Choisissez votre personnage entre 0 et 4" << endl;
+    cout << "Joueur 1 Choisissez votre personnage entre \n 0 carapuce\n 1 pour bulbizarre \n 2 pour florizarre \n 3 pour salamèche \n 4 pour carabaffe " << endl;
     cin >> str1 ;
     int i = stoi(str1);
     joueur1 = liste1[i];
-//    cout << "c'est i : " << i <<endl;
+    cout << "vous avez choisis " << joueur1->nom << "\n\n" <<endl;
 
-    cout << "Joueur 2 Choisissez votre personnage entre 0 et 4" << endl;
+    cout << "Joueur 2 Choisissez votre personnage entre \n 0 pour Mystherbe \n 1 pour Empiflor \n 2 pour Draco \n 3 pour Boustiflor \n 4 pour Roucarnage" << endl;
     cin >> str2;
     int j = stoi(str2);
-//    cout << "c'est j : " << j <<endl;
+    //    cout << "c'est j : " << j <<endl;
     joueur2 = liste2[j];
+    cout << "vous avez choisis " << joueur2->nom << "\n\n" <<endl;
+
+    cout << "Appuyez sur entrée pour commencer le combat entre " << joueur1->nom <<" et " << joueur2->nom <<endl;
+    cin >> str2;
     while (joueur1->PV>0 && joueur2->PV>0)
     {
         joueur1->attaque(joueur2);
         joueur2->attaque(joueur1);
-//        animal2->attaque(animal6);
-//        animal6->attaque(animal2);
+        //        animal2->attaque(animal6);
+        //        animal6->attaque(animal2);
 
 
         if(joueur1->PV<0)
@@ -93,9 +97,6 @@ int main()
             gagnant = "************ " + joueur1 -> nom + " a gagné le combat ************";
         }
     }
-
-
-
 
     cout << gagnant << endl;
     return 0;
